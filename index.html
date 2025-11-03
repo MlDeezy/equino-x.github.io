@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EquinoX — Hilton</title>
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <img src="logo.png" alt="EquinoX logo" class="logo" />
+      <div class="title-block">
+        <h1 class="site-title">EquinoX</h1>
+        <p class="site-sub">by Hilton — Design. Code. Create.</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="panel">
+      <h2 class="panel-title">About</h2>
+      <p class="lead">EquinoX blends creativity and technology — design, storytelling and code combined. Founded by Hilton (Python dev, web designer, and creative producer). I build visuals and systems that actually work.</p>
+    </section>
+
+    <!-- CERTS -->
+    <section id="certs" class="panel">
+      <h2 class="panel-title">Certifications</h2>
+      <ul class="cert-list">
+        <li>Certified Entry-Level Python Programmer (PCAP)</li>
+        <li>Certified Google IT Support Analyst</li>
+        <li>Network Technician</li>
+        <li>Web Developer</li>
+        <li>Python Developer</li>
+      </ul>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section id="services" class="panel">
+      <h2 class="panel-title">What I Do</h2>
+      <div class="services-grid">
+        <div class="card service">
+          <h3>🎨 Graphics & Motion Design</h3>
+          <p>Animated logos, server banners, thumbnails, and full brand kits.</p>
+        </div>
+        <div class="card service">
+          <h3>🎬 Video Editing</h3>
+          <p>Cinematic shorts, pacing, VO sync and captions for high retention.</p>
+        </div>
+        <div class="card service">
+          <h3>🌐 Web Design & Dev</h3>
+          <p>Responsive landing pages, React front-ends, and clean UX.</p>
+        </div>
+        <div class="card service">
+          <h3>🎧 Music Production</h3>
+          <p>Beats, scoring, mixing and master for videos & shorts.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="panel">
+      <h2 class="panel-title">Projects</h2>
+      <div class="projects-grid">
+        <a class="card project" href="https://youtube.com/@equino_x1" target="_blank" rel="noopener">
+          <h3>🎥 EquinoX Shorts</h3>
+          <p>True horror & mystery storytelling — eerie visuals, AI-assisted art, cinematic pacing.</p>
+        </a>
+
+        <a class="card project" href="https://dovmedpharmacy.com" target="_blank" rel="noopener">
+          <h3>🧠 DOVMed Pharmacy</h3>
+          <p>Online shopping landing page for DOVMed Pharamcy — shop UX & secure checkout.</p>
+        </a>
+
+        <a class="card project" href="https://github.com/MlDeezy" target="_blank" rel="noopener">
+          <h3>💻 GitHub</h3>
+          <p>Code repos, portfolio site source, and scripts — check GitHub for demos and projects.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- DESIGNS GALLERY -->
+    <section id="designs" class="panel">
+      <h2 class="panel-title">Designs & Gallery</h2>
+      <p class="desc">Flyers, banners, thumbnails and recent graphics. Click to view fullsize.</p>
+
+      <div class="gallery-grid">
+        <!-- Upload your images with these filenames OR change the names here -->
+        <div class="gallery-item"><img src="design1.png" alt="Design 1" loading="lazy"></div>
+        <div class="gallery-item"><img src="design2.png" alt="Design 2" loading="lazy"></div>
+        <div class="gallery-item"><img src="design3.png" alt="Design 3" loading="lazy"></div>
+        <div class="gallery-item"><img src="design4.png" alt="Design 4" loading="lazy"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel">
+      <h2 class="panel-title">Contact</h2>
+      <div class="contact-row">
+        <a class="btn" href="mailto:hiltonoguguo@gmail.com">📧 Email</a>
+        <a class="btn" href="https://instagram.com/dyk.og" target="_blank" rel="noopener">📸 Instagram</a>
+
+        <!-- Discord: two options: copy tag OR use an invite link (replace placeholder below) -->
+        <button class="btn discord" id="copyDiscordBtn">💬 Copy Discord Tag</button>
+        <a class="btn discord-alt" id="discordInvite" href="#" target="_blank" rel="noopener">🔗 Open Invite</a>
+
+        <a class="btn" href="https://github.com/MlDeezy" target="_blank" rel="noopener">👨‍💻 GitHub</a>
+      </div>
+
+      <p class="small">Discord tag: <strong id="discordTag">devhiltonx#0000</strong></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 EquinoX — Hilton</p>
+  </footer>
+
+  <!-- Optional small script: handles copy-to-clipboard and placeholder invite -->
+  <script>
+    // Replace this with your real Discord invite URL if you have one.
+    const DISCORD_INVITE_URL = "https://discord.gg/YOUR_INVITE_CODE"; // <-- replace this
+
+    // Copy Discord tag button
+    document.getElementById('copyDiscordBtn').addEventListener('click', function() {
+      const tag = document.getElementById('discordTag').textContent.trim();
+      navigator.clipboard?.writeText(tag).then(() => {
+        alert('Discord tag copied: ' + tag + '\\nPaste into Discord "Add Friend" (username#tag).');
+      }).catch(() => {
+        prompt('Copy this Discord tag:', tag);
+      });
+    });
+
+    // Set invite link (if you haven't replaced DISCORD_INVITE_URL, it will open placeholder page)
+    const inviteBtn = document.getElementById('discordInvite');
+    if (DISCORD_INVITE_URL && !DISCORD_INVITE_URL.includes("YOUR_INVITE_CODE")) {
+      inviteBtn.href = DISCORD_INVITE_URL;
+      inviteBtn.textContent = '🔗 Join Discord';
+    } else {
+      inviteBtn.href = 'https://discord.com'; // fallback
+      inviteBtn.textContent = '🔗 Add on Discord (replace invite)';
+    }
+  </script>
+</body>
+</html>
